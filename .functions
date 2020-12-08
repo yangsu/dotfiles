@@ -169,3 +169,11 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+function cleanGitBranches() {
+	git branch --merged | grep -v \* | xargs git branch -D
+}
+
+function onPort() {
+	lsof -i tcp:$1
+}
