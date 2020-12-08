@@ -12,6 +12,9 @@
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 
+	# Word Diff
+	wd = diff --patch-with-stat --word-diff
+
 	# Pull in remote changes for the current repository and all its submodules
 	p = pull --recurse-submodules
 
@@ -23,6 +26,14 @@
 
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+	# Stashing
+	stash = stash save "latest working state"
+	unstash = stash apply
+
+	# Staging
+	stage = add
+	unstage = reset
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
@@ -82,13 +93,26 @@
 	# Show the user email for the current repository.
 	whoami = config user.email
 
+	uncommit = reset --soft HEAD^
+	# Undo a `git push`
+	undopush = push -f origin HEAD^:master
+
+	# Stage non whitespace changes
+	addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
+
+	# Copied from https://gist.github.com/1327258
+	l50 = "!git log --abbrev-commit --date=short --pretty=format:'%x00%h%x00%cd%x00%s%x00%an%x00%d' | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m \\033[32m%s\\033[0m  %-50s \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, $3, gensub(/(.{49}).{2,}/, \"\\\\1…\",\"g\",$4), $5, $6 }' | less -R"
+	l80 = "!git log --abbrev-commit --date=short --pretty=format:'%x00%h%x00%cd%x00%s%x00%an%x00%d' | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m \\033[32m%s\\033[0m  %-80s \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, $3, gensub(/(.{79}).{2,}/, \"\\\\1…\",\"g\",$4), $5, $6 }' | less -R"
+	lg50 = "!git log --graph --color=always --abbrev-commit --date=relative --pretty=format:'%x00%h%x00%s%x00%cd%x00%an%x00%d' | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m %-50s \\033[32m%14s\\033[0m \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, gensub(/(.{49}).{2,}/, \"\\\\1…\",\"g\",$3), $4, $5, $6 }' | less -R"
+	lg80 = "!git log --graph --color=always --abbrev-commit --date=relative --pretty=format:'%x00%h%x00%s%x00%cd%x00%an%x00%d' | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m %-80s \\033[32m%14s\\033[0m \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, gensub(/(.{79}).{2,}/, \"\\\\1…\",\"g\",$3), $4, $5, $6 }' | less -R"
+
 [apply]
 
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
 
 [core]
-
+	quotepath = false
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
