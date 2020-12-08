@@ -10,7 +10,7 @@ function doIt() {
 		--exclude ".osx" \
 		--exclude "bootstrap.sh" \
 		--exclude "brew.sh" \
-		--exclude ".duti" \
+		--exclude "duti.zsh" \
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
 		-avh --no-perms . ~;
