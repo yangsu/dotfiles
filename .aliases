@@ -22,10 +22,11 @@ alias gcam="git commit -am"
 alias gca="git commit --amend"
 alias gcaa="git commit -a --amend"
 alias gdc="git diff --cached"
-alias gmaster="git checkout master"
+alias gmain="git checkout main"
+alias gmaster="git checkout main"
 alias greset="git reset --hard"
 alias gb="git branch"
-alias gu="git pull --rebase origin master"
+alias gu="git pull --rebase origin main"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

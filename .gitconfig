@@ -95,7 +95,7 @@
 
 	uncommit = reset --soft HEAD^
 	# Undo a `git push`
-	undopush = push -f origin HEAD^:master
+	undopush = push -f origin HEAD^:main
 
 	# Stage non whitespace changes
 	addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
