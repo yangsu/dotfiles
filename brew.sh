@@ -103,5 +103,21 @@ brew install duti
 # Install GNU `awk`
 brew install gawk
 
+# https://zaiste.net/posts/shell-commands-rust/
+brew install bat
+# https://github.com/ogham/exa
+brew install exa
+# https://github.com/dalance/procs
+brew install procs
+# https://github.com/chmln/sd
+brew install sd
+# https://github.com/sharkdp/fd
+brew install fd
+# https://www.monades.dev/fuzzy-finding-everything-with-fzf/
+# https://github.com/junegunn/fzf
+brew install fzf
+# https://github.com/BurntSushi/ripgrep
+brew install ripgrep
+
 # Remove outdated versions from the cellar.
 brew cleanup
