@@ -1,0 +1,13 @@
+collections:
+  sessions:
+    path: /Users/yang/Library/CloudStorage/GoogleDrive-yang@seenhealth.org/Shared drives/XY/Obsidian/yang-gdrive/Claude-Sessions
+    pattern: "*.md"
+  dbt-models:
+    path: /Users/yang/Code/seen-analytics/seen_dbt/docs/model-index
+    pattern: "*.md"
+  quirks:
+    path: /Users/yang/Code/seen/deployment/modules/openclaw/knowledge/quirks
+    pattern: "*.md"
+  metrics:
+    path: /Users/yang/Code/seen/deployment/modules/openclaw/knowledge/metrics
+    pattern: "*.md"
