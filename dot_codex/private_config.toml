@@ -1,0 +1,57 @@
+model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
+personality = "pragmatic"
+web_search = "live"
+
+[projects."/Users/yang/Code/seen-analytics"]
+trust_level = "trusted"
+
+[projects."/Users/yang/Code/seen"]
+trust_level = "trusted"
+
+[projects."/Users/yang/Code/web"]
+trust_level = "trusted"
+
+[projects."/Users/yang/Code/twenty"]
+trust_level = "trusted"
+
+[projects."/Users/yang/Code/hccinfhir"]
+trust_level = "trusted"
+
+[projects."/Users/yang/Code/seen-ehr"]
+trust_level = "trusted"
+
+[projects."/Users/yang/Code/n8n"]
+trust_level = "trusted"
+
+[projects."/"]
+trust_level = "trusted"
+
+[model_providers.litellm]
+name = "Litellm"
+base_url = "https://litellm.seen.tech"
+env_key = "LITELLM_API_KEY"
+
+[profiles.gpt5]
+model_provider = "litellm"
+model = "gpt-5"
+model_reasoning_effort = "high"
+
+
+[features]
+unified_exec = true
+multi_agent = true
+js_repl = true
+
+[notice]
+hide_gpt5_1_migration_prompt = true
+hide_rate_limit_model_nudge = true
+"hide_gpt-5.1-codex-max_migration_prompt" = true
+
+[notice.model_migrations]
+"gpt-5.1-codex-max" = "gpt-5.2-codex"
+"gpt-5.2-codex" = "gpt-5.3-codex"
+
+[mcp_servers.notion]
+url = "https://mcp.notion.com/mcp"
+
