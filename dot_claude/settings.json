@@ -316,7 +316,6 @@
       "Bash(fi)",
       "Bash([ -f /tmp/slack/user-map.json ])",
       "Bash(rm:*)",
-      "Bash(curl -s -X POST \"https://analytics.seen.tech/api/dataset\" -H \"X-API-Key: mb_NW4zR++3X0XKCulzvawlaxxig4tuCvsnU4ORQ/O8CJ8=\" -H \"Content-Type: application/json\" -d '{\"\"database\"\": 2, \"\"type\"\": \"\"native\"\", \"\"native\"\": {\"\"query\"\": \"\"SELECT * FROM sgv_reporting.aves_bulk_check_leads WHERE lower\\(name\\) LIKE ''''%yufeng%'''' LIMIT 10\"\"}}')",
       "Bash(bq query --use_legacy_sql=false --format=json --max_rows=10 \"SELECT * FROM sgv_reporting.aves_bulk_check_leads WHERE LOWER\\(first_name\\) LIKE ''%yufeng%'' OR LOWER\\(last_name\\) LIKE ''%yufeng%'' OR LOWER\\(full_name\\) LIKE ''%yufeng%''\")",
       "Bash(gcloud config get-value project)"
     ],
