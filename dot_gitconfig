@@ -1,3 +1,12 @@
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = Yang Su
+	email = yang@seenhealth.org
+	# signingkey = 2E631B6ADD7F07FE9BA335682A2C6B6F63507148
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -133,6 +142,7 @@
 	# Speed up commands involving untracked files such as `git status`.
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
+	symlinks = true
 
 [color]
 
@@ -162,7 +172,7 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+	# gpgsign = true
 
 [diff]
 

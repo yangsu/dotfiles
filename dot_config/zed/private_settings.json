@@ -1,0 +1,116 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "google",
+      "model": "gemini-3-flash-preview"
+    },
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash"
+    },
+    "favorite_models": [
+      {
+        "provider": "google",
+        "model": "gemini-3-flash-preview"
+      }
+    ],
+    "model_parameters": []
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "preview_tabs": {
+    "enabled": false,
+    "enable_preview_from_file_finder": false
+  },
+  "tab_bar": {
+    "show": false
+  },
+  "multi_cursor_modifier": "alt",
+  "use_smartcase_search": true,
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "buffer_font_fallbacks": [
+    "Hack"
+  ],
+  "buffer_font_family": "Fira Code",
+  "file_types": {
+    "terraform": [
+      ".terraform.lock.hcl",
+      ".terraform.lock.hcl"
+    ],
+    "shellscript": [
+      ".extra",
+      ".extra"
+    ],
+    "javascript": [
+      "*.jsx",
+      "*.jsx"
+    ],
+    "dotenv": [
+      ".env",
+      ".envrc.local",
+      ".envrc.staging.local",
+      ".envrc.prod.local",
+      ".env",
+      ".envrc.local",
+      ".envrc.staging.local",
+      ".envrc.prod.local"
+    ],
+    "html": [
+      "*.html",
+      "*.html"
+    ],
+    "sql": [
+      "*.sql",
+      "*.sql"
+    ]
+  },
+  "colorize_brackets": true,
+  "auto_indent_on_paste": false,
+  "linked_edits": true,
+  "use_on_type_format": false,
+  "show_whitespaces": "selection",
+  "show_edit_predictions": true,
+  "ensure_final_newline_on_save": true,
+  "wrap_guides": [
+    80,
+    100,
+    120
+  ],
+  "hard_tabs": false,
+  "base_keymap": "SublimeText",
+  "ui_font_size": 16,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+}

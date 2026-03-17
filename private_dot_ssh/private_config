@@ -1,0 +1,4 @@
+Host openclaw
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    User ubuntu
