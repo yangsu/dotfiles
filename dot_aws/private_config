@@ -1,0 +1,19 @@
+[profile seen-prod]
+sso_session = seen
+sso_account_id = 804982117653
+sso_role_name = Rippling-IAM-IC-Administrator
+output = json
+[sso-session seen]
+sso_start_url = https://seen.awsapps.com/start
+sso_region = us-west-2
+sso_registration_scopes = sso:account:access
+[profile seen-sgv]
+sso_session = seen
+sso_account_id = 339712915846
+sso_role_name = SGV-Admin
+output = json
+[profile seen-dev]
+sso_session = seen
+sso_account_id = 211125499296
+sso_role_name = Dev-Rippling-IAM-IC-Admin
+output = json
