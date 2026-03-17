@@ -1,0 +1,90 @@
+[connections]
+# *WARNING* *WARNING* *WARNING* *WARNING* *WARNING* *WARNING*
+#
+# The Snowflake user password is stored in plain text in this file.
+# Pay special attention to the management of this file.
+# Thank you.
+#
+# *WARNING* *WARNING* *WARNING* *WARNING* *WARNING* *WARNING*
+
+#If a connection doesn't specify a value, it will default to these
+#
+#accountname = defaultaccount
+#region = defaultregion
+#username = defaultuser
+#password = defaultpassword
+#dbname = defaultdbname
+#schemaname = defaultschema
+#warehousename = defaultwarehouse
+#rolename = defaultrolename
+#proxy_host = defaultproxyhost
+#proxy_port = defaultproxyport
+
+[connections.seen]
+#Can be used in SnowSql as #connect seen
+accountname = WSNKQWX-GHB72097
+username = yang
+private_key_path = /Users/yang/.snowflake/rsa_key.p8
+rolename = USERADMIN
+warehousename = WEST_HEALTH
+
+[connections.elation_seen_health]
+#Can be used in SnowSql as #connect elation_seen_health
+
+accountname = ELATIONHEALTH-SEEN_HEALTH
+username = YANG_ADMIN
+password = {{ onepasswordRead "op://Engineering/Snowflake Elation YANG_ADMIN/password" "seenhealth.1password.com" }}
+rolename = USERADMIN
+warehousename = SEEN_HEALTH_WH
+dbname = ELATIONHEALTH_EHDW_SEEN_HEALTH
+schemaname = SEEN_HEALTH
+
+[variables]
+# SnowSQL defines the variables in this section on startup.
+# You can use these variables in SQL statements. For details, see
+# https://docs.snowflake.com/en/user-guide/snowsql-use.html#using-variables
+
+# example_variable=27
+
+[options]
+# Clean output for scripting (no startup messages, no headers, no timing)
+friendly = False
+header = False
+timing = False
+output_format = csv
+
+# If set to false auto-completion will not occur interactive mode.
+auto_completion = True
+
+# main log file location. The file includes the log from SnowSQL main
+# executable.
+log_file = ~/.snowsql/log
+
+# Default log level. Possible values: "CRITICAL", "ERROR", "WARNING", "INFO"
+# and "DEBUG".
+log_level = CRITICAL
+
+# Keybindings: Possible values: emacs, vi.
+# Emacs mode: Ctrl-A is home, Ctrl-E is end. All emacs keybindings are available in the REPL.
+# When Vi mode is enabled you can use modal editing features offered by Vi in the REPL.
+key_bindings = emacs
+
+# OCSP Fail Open Mode.
+# The only OCSP scenario which will lead to connection failure would be OCSP response with a
+# revoked status. Any other errors or in the OCSP module will not raise an error.
+# ocsp_fail_open = True
+
+# Enable temporary credential file for Linux users
+# For Linux users, since there are no OS-key-store, an unsecure temporary credential for SSO can be enabled by this option. The default value for this option is False.
+# client_store_temporary_credential = True
+
+# Select statement split method (default is to use the sql_split method in snowsql, which does not support 'sql_delimiter')
+# sql_split = snowflake.connector.util_text # to use connector's statement_split which has legacy support to 'sql_delimiter'.
+
+# Force the result data to be decoded in utf-8. By default the value is set to false for compatibility with legacy data. It is recommended to set the value to true.
+# json_result_force_utf8_decoding = False
+
+
+# Repository Base URL
+# The endpoint to download the SnowSQL main module.
+repository_base_url = https://sfc-repo.snowflakecomputing.com/snowsql
